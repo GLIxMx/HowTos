@@ -6,8 +6,7 @@ Descripción
 ===========
 Aquí hay un script que te servirá para instalar Arch Linux en una Raspberry Pi 3. Es muy importante que configures el script primero.
 
-.. warning:: Configura el script primero!
-    Este script tiene una sección llamada: "settings". Asegúrate de poner los valores adecuados ahí o pudieras destruir tu instalación.
+Ten mucho cuidado porque, si pasas el dispositivo equivocado, destruirás el mismo.
 
 Instalación
 ===========
@@ -15,7 +14,7 @@ Para correr el script:
 
 * configúralo
 * házlo ejectutable: `chmod u+x arch-mkrpi3`
-* córrelo con poderes de root: `su -c ./arch-mkrpi3`
+* córrelo con poderes de root: `su -c "./arch-mkrpi3 /dev/sdX"` o `sudo ./arch-mkrpi3 /dev/sdX`
 
 .. include:: arch-mkrpi3
     :code: bash

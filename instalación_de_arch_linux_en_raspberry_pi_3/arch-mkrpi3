@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 
 # settings
-device='/dev/sdf'
-arch_image='/home/renich/Downloads/linux/rpi/ArchLinuxARM-rpi-2-latest.tar.gz'
+device=${1:-'/dev/zero'}
+arch_image="${HOME}/Downloads/linux/rpi/ArchLinuxARM-rpi-2-latest.tar.gz"
 arch_image_url='https://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz'
 mountpoint='/mnt/arch'
+
+echo $device
+
+exit
+
+## umask
+umask 007
 
 # cleanup
 umount ${device}*
@@ -13,6 +20,7 @@ partprobe
 
 # bootstrap
 mkdir -p $mountpoint/{boot,root}
+mkdir -p $arch_image
 cd $mountpoint
 
 # partition
